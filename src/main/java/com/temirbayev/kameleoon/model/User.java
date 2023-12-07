@@ -1,4 +1,4 @@
-package model;
+package com.temirbayev.kameleoon.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,8 +17,8 @@ import java.time.LocalDate;
 @Table(name = "users")
 public class User{
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")

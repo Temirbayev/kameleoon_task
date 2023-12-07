@@ -1,5 +1,8 @@
 package com.temirbayev.kameleoon;
 
+import com.temirbayev.kameleoon.model.User;
+import com.temirbayev.kameleoon.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,5 +12,4 @@ public class KameleoonApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KameleoonApplication.class, args);
 	}
-
 }

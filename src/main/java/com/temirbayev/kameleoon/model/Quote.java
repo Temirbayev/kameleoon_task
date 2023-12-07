@@ -1,27 +1,30 @@
-package model;
+package com.temirbayev.kameleoon.model;
 
+import com.temirbayev.kameleoon.model.dto.VoteDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
 @Builder
-@Table(name = "users")
+@Getter
+@Setter
+@Table(name = "quote")
 public class Quote {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "content")
     private String content;
 
     @CreationTimestamp
@@ -33,5 +36,8 @@ public class Quote {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(mappedBy = "quote", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VoteDto> votes = new ArrayList<>();
 
 }
