@@ -1,10 +1,8 @@
 package com.temirbayev.kameleoon.controller;
 
 import com.temirbayev.kameleoon.model.Quote;
-import com.temirbayev.kameleoon.model.Roles;
 import com.temirbayev.kameleoon.model.Users;
 import com.temirbayev.kameleoon.service.QuoteService;
-import com.temirbayev.kameleoon.service.RolesService;
 import com.temirbayev.kameleoon.service.UsersService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,20 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
     private final QuoteService quoteService;
     private final UsersService userService;
-    private final RolesService rolesService;
     private final PasswordEncoder passwordEncoder;
 
-    public MainController(QuoteService quoteService, UsersService userService, RolesService rolesService, PasswordEncoder passwordEncoder) {
+    public MainController(QuoteService quoteService, UsersService userService, PasswordEncoder passwordEncoder) {
         this.quoteService = quoteService;
         this.userService = userService;
-        this.rolesService = rolesService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -69,7 +64,7 @@ public class MainController {
     }
 
     @GetMapping("/403")
-    public String accessDenied(Model model) {
+    public String accessDenied() {
         return "403";
     }
 }

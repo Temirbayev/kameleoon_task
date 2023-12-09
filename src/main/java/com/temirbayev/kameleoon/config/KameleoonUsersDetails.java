@@ -62,22 +62,4 @@ public class KameleoonUsersDetails implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         return (UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication));
     }
-
-
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        String userName,password = null;
-//        List<GrantedAuthority> authorities = null;
-//        List<Users> users = userRepository.findByName(username);
-//        if (users.size() == 0){
-//            throw new UsernameNotFoundException("User not found" + username);
-//        }else {
-//            userName = users.get(0).getName();
-//            password = users.get(0).getPassword();
-//            authorities = new ArrayList<>();
-//            authorities.add(new SimpleGrantedAuthority(users.get(0).getRoles().toString()));
-//        }
-//        return new User(userName,password,authorities);
-//    }
-
 }

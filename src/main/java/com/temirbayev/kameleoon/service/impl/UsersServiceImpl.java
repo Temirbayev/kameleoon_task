@@ -4,7 +4,6 @@ import com.temirbayev.kameleoon.model.Users;
 import com.temirbayev.kameleoon.repository.UserRepository;
 import com.temirbayev.kameleoon.service.UsersService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

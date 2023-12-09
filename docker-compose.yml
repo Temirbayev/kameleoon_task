@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: 'postgres:15.1'
+    container_name: 'java-kameleoon'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwe
+      POSTGRES_DB: kameleoon_data
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  app:
+    build: ./
+    container_name: 'docker-kameleoon'
+    ports:
+      - "8002:8002"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/kameleoon_data
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: qwe
+
+volumes:
+  postgres-data:

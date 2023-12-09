@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 @Transactional
 public interface UserRepository extends JpaRepository<Users, Long> {
-    List<Users> findByEmail(String email);
     List<Users> findByName(String name);
 
 }
