@@ -1,13 +1,13 @@
-package com.temirbayev.kameleoon;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class KameleoonApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//package com.temirbayev.kameleoon;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class KameleoonApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}

@@ -1,5 +1,6 @@
 package com.temirbayev.kameleoon.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +9,9 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +19,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Table(name = "users")
-public class User{
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -32,4 +36,8 @@ public class User{
 
     @CreationTimestamp
     private LocalDate createdDate;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Roles> roles;
+
 }

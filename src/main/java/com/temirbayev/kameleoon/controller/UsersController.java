@@ -1,32 +1,32 @@
 package com.temirbayev.kameleoon.controller;
 
-import com.temirbayev.kameleoon.model.User;
-import com.temirbayev.kameleoon.service.UserService;
+import com.temirbayev.kameleoon.model.Users;
+import com.temirbayev.kameleoon.service.UsersService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
-public class UserController {
-    private final UserService userService;
+public class UsersController {
+    private final UsersService userService;
 
-    public UserController(UserService userService) {
+    public UsersController(UsersService userService) {
         this.userService = userService;
     }
 
     @GetMapping("/")
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         return userService.userList();
     }
 
     @GetMapping("/{userId}")
-    public User getUserById(@PathVariable Long userId) {
+    public Users getUserById(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user){
+    public Users createUser(@RequestBody Users user){
         return userService.createUser(user);
     }
 

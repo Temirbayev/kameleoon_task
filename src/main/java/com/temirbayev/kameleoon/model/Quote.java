@@ -14,7 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Data
-@Builder
 @Getter
 @Setter
 @Table(name = "quote")
@@ -35,7 +34,7 @@ public class Quote {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Users user;
 
     @OneToMany(mappedBy = "quote", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<VoteDto> votes = new ArrayList<>();

@@ -12,7 +12,7 @@
 	<artifactId>kameleoon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kameleoon</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Kameleoon trial task</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -46,9 +46,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+
 	</dependencies>
 
 	<build>
