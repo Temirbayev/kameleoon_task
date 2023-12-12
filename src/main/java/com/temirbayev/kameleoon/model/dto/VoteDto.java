@@ -1,5 +1,6 @@
 package com.temirbayev.kameleoon.model.dto;
 
+import com.temirbayev.kameleoon.model.Users;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,4 +25,10 @@ public class VoteDto {
     @ManyToOne
     @JoinColumn(name = "quote_id")
     private Quote quote;
+
+    @ManyToOne
+    @JoinColumn(name = "users_id")
+    private Users userId;
+
+
 }

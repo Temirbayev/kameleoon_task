@@ -6,8 +6,9 @@
 //@SpringBootTest
 //class KameleoonApplicationTests {
 //
-//	@Test
-//	void contextLoads() {
-//	}
+//    @Test
+//    void contextLoads() {
+//        return;
+//    }
 //
 //}

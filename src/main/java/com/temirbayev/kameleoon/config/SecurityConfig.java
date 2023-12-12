@@ -42,7 +42,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests)->requests
                         .requestMatchers("/").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/v3/api-docs").hasRole("ADMIN")
-                        .requestMatchers(  "/registration", "/", "/api/user/", "/403").permitAll())
+                        .requestMatchers(  "/registration", "/", "/api/user/", "/403").permitAll()
+                        .anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
         return http.build();

@@ -8,4 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface VoteRepository extends JpaRepository<VoteDto, Long> {
+//    boolean existsByQuoteIdAndUserId(Long quoteId, Long userId);
 }
